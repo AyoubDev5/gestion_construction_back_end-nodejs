@@ -41,10 +41,6 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage });
 
 //ROUTES//
-
-app.get('/', (req,res) => {
-  res.send('Running');
-})
 //create an empl
 app.post("/empl", async (req, res) => {
   try {
