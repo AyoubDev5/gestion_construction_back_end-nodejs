@@ -15,8 +15,8 @@ app.use(express.json()); //req.body
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Init app
-const accountSid = process.env.Sid; 
-const authToken = process.env.Token; 
+const accountSid = "ACc3fe5045eff3380f4d98d22c65c48786"; 
+const authToken = "c0ca80403b90014d704000c67f5c79a1"; 
 const client = new twilio(accountSid, authToken); 
 
 pool.connect((error) => {
@@ -347,15 +347,15 @@ app.post('/email',(req,res)=>{
   const trans = nodemailer.createTransport({
       service:'gmail',
       auth:{
-          user:process.env.User,
-          pass:process.env.Pass
+          user:'ayoub.taqi@usmba.ac.ma',
+          pass:'24102001'
       }
   })
 
   const option={
-      from: process.env.User,
+      from: 'ayoub.taqi@usmba.ac.ma',
       to: email,
-      subject: 'message from '+ process.env.User,
+      subject: 'message from '+ 'ayoub.taqi@usmba.ac.ma',
       text: text
   }
   trans.sendMail(option, (error, body) => {
@@ -377,9 +377,9 @@ app.post('/sms', (req, res) => {
   client.messages 
       .create({ 
          body: text,  
-         messagingServiceSid: process.env.ServiceSid,      
+         messagingServiceSid: "MG0b532344f1aca1f5c02e047f17b88af3",      
          to: "+212"+number ,
-         from: process.env.Number
+         from: "+17407594109"
        }) 
       .then(message => 
         console.log("success")
