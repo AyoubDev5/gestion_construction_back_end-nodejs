@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const bodyParser = require("body-parser");
-const pool = require("./db");
+// const pool = require("./db");
 const multer = require("multer");
 const path = require("path");
 const nodemailer = require('nodemailer');
@@ -20,10 +20,10 @@ const authToken = "c0ca80403b90014d704000c67f5c79a1";
 const client = new twilio(accountSid, authToken); 
 
 const port = process.env.PORT || 5000;
-pool.connect((error) => {
-  if (error) throw error;
-  else console.log("DATABASE connected ON PORT 5432");
-});
+// pool.connect((error) => {
+//   if (error) throw error;
+//   else console.log("DATABASE connected ON PORT 5432");
+// });
 app.listen(port, () => {
   console.log("server has started on port "+ port);
 });
