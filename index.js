@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const bodyParser = require("body-parser");
-const pool = require("./db");
+// const pool = require("./db");
 const multer = require("multer");
 const path = require("path");
 const nodemailer = require('nodemailer');
@@ -19,10 +19,10 @@ const accountSid = "ACc3fe5045eff3380f4d98d22c65c48786";
 const authToken = "c0ca80403b90014d704000c67f5c79a1"; 
 const client = new twilio(accountSid, authToken); 
 
-pool.connect((error) => {
-  if (error) throw error;
-  else console.log("DATABASE connected ON PORT 5432");
-});
+// pool.connect((error) => {
+//   if (error) throw error;
+//   else console.log("DATABASE connected ON PORT 5432");
+// });
 app.listen(5000, () => {
   console.log("server has started on port 5000");
 });
@@ -41,6 +41,9 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage });
 
 //ROUTES//
+app.get('/',(req,res)=>{
+  res.send("welcome")
+});
 //create an empl
 app.post("/empl", async (req, res) => {
   try {
