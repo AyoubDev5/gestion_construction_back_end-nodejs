@@ -19,12 +19,13 @@ const accountSid = "ACc3fe5045eff3380f4d98d22c65c48786";
 const authToken = "c0ca80403b90014d704000c67f5c79a1"; 
 const client = new twilio(accountSid, authToken); 
 
+const port = process.env.PORT || 5000;
 // pool.connect((error) => {
 //   if (error) throw error;
 //   else console.log("DATABASE connected ON PORT 5432");
 // });
-app.listen(5000, () => {
-  console.log("server has started on port 5000");
+app.listen(port, () => {
+  console.log("server has started on port "+ port);
 });
 
 var storage = multer.diskStorage({
