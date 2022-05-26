@@ -348,7 +348,7 @@ app.post('/email',(req,res)=>{
       service:'gmail',
       auth:{
           user:'ayoub.taqi@usmba.ac.ma',
-          pass:'24102001'
+          pass:'cbfhxjglgcabpoux'
       }
   })
 
